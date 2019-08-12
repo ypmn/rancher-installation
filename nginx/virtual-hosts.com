@@ -8,7 +8,7 @@ server {
 
     location / {
    # resolver kube-dns.kube-system.svc.cluster.local ipv6=off;
-    set $target https:rancher:443;
+    set $target https://rancher:443;
     proxy_pass  $target;
     proxy_next_upstream error timeout invalid_header http_500 http_502 http_503 http_504;
     proxy_redirect off;
